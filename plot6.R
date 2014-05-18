@@ -20,7 +20,7 @@ library(ggplot2)
 total.emissions.baltimore.LA.motor.vehicle <- aggregate(NEI.baltimore.LA.motor.vehicle$Emissions, list(year = NEI.baltimore.LA.motor.vehicle$year, region = NEI.baltimore.LA.motor.vehicle$fips), sum, na.rm = TRUE)
 colnames(total.emissions.baltimore.LA.motor.vehicle)[3] <- "emissions"
 
-## Compute the delta between each year and 1999 to better visualise the
+## Compute the delta of emissions between each year and 1999 to better visualise the
 ## changes in emissions from motor vehicle sources for Baltimore City
 ## and Los Angeles County
 
