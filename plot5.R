@@ -22,5 +22,5 @@ colnames(total.emissions.baltimore.motor.vehicle)[2] <- "emissions"
 png(file ="plot5.png", width = 480, height = 480)
 plot(total.emissions.baltimore.motor.vehicle$year, total.emissions.baltimore.motor.vehicle$emissions, type = "b", col = "red", xlab = "Years", ylab = bquote("Sum of PM"[2.5] ~  "emissions per year (in tons)"))
 title(bquote("Total emissions per year"), line = 3)
-title(expression(italic("Baltimore City - Motor vehicle source")), line = 2)
+title(expression(italic("Baltimore City - Motor vehicle sources")), line = 2)
 dev.off()
