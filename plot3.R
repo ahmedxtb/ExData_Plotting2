@@ -22,6 +22,7 @@ colnames(total.emissions.baltimore.type)[3] <- "emissions"
 ## Plot the total emissions (in tons) vs. year from "NONPOINT", "NON-ROAD",
 ## "ON-ROAD" and "POINT" sources for Baltimore City (ggplot2 plotting system)
 
-png(file ="plot3.png", width = 480, height = 480)
-qplot(year, emissions, data = total.emissions.baltimore.type, color = source, shape = source, geom = c("point", "line")) + ggtitle("Total emissions per year\n\nBaltimore City - Point, nonpoint, onroad, nonroad sources") + labs(x = "Years", y = bquote("Sum of PM"[2.5] ~  "emissions per year (in tons)"))
+png(file ="plot3.png", width = 720, height = 720)
+theme_set(theme_bw())
+qplot(year, emissions, data = total.emissions.baltimore.type, color = source, shape = source, geom = c("point", "line")) + theme(plot.title = element_text(size = 20)) + ggtitle(expression(atop(bold("Total emissions per year"), atop(italic("Baltimore City - Point, nonpoint, onroad, nonroad sources"), "")))) + labs(x = "Years", y = bquote("Sum of PM"[2.5] ~  "emissions per year (in tons)"))
 dev.off()

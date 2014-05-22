@@ -20,7 +20,8 @@ colnames(total.emissions.coal.comb)[2] <- "emissions"
 ## Plot the total emissions (in kilo-tons) vs. year from coal combustion sources
 ## for the USA (base plotting system)
 
-png(file ="plot4.png", width = 480, height = 480)
+png(file ="plot4.png", width = 720, height = 720)
+par(ps = 12, cex.main = 1.7)
 plot(total.emissions.coal.comb$year, total.emissions.coal.comb$emissions / 1000, type = "b", col = "red", xlab = "Years", ylab = bquote("Sum of PM"[2.5] ~  "emissions per year (in kilo-tons)"))
 title(bquote("Total emissions per year"), line = 3)
 title(expression(italic("USA - Coal combustion sources")), line = 2)

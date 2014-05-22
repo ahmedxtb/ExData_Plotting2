@@ -17,7 +17,8 @@ colnames(total.emissions.baltimore)[2] <- "emissions"
 ## Plot the total emissions (in kilo-tons) vs. year from all sources
 ## for Baltimore City (base plotting system)
 
-png(file ="plot2.png", width = 480, height = 480)
+png(file ="plot2.png", width = 720, height = 720)
+par(ps = 12, cex.main = 1.7)
 plot(total.emissions.baltimore$year, total.emissions.baltimore$emissions / 1000, type = "b", col = "red", xlab = "Years", ylab = bquote("Sum of PM"[2.5] ~  "emissions per year (in kilo-tons)"))
 title(bquote("Total emissions per year"), line = 3)
 title(expression(italic("Baltimore City - All sources")), line = 2)

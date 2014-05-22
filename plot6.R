@@ -32,6 +32,7 @@ total.emissions.baltimore.LA.motor.vehicle$region[total.emissions.baltimore.LA.m
 ## Plot the total emissions (in tons) vs. year from motor vehicle sources
 ## for Baltimore City and Los Angeles County (ggplot2 plotting system)
 
-png(file ="plot6.png", width = 480, height = 480)
-qplot(year, emissions, data = total.emissions.baltimore.LA.motor.vehicle, color = region, shape = region, geom = c("point", "line")) + ggtitle("Changes in emissions per year\n\nBaltimore City, Los Angeles County - Motor vehicle sources") + labs(x = "Years", y = bquote("Changes in PM"[2.5] ~  "emissions per year (in tons)"))
+png(file ="plot6.png", width = 720, height = 720)
+theme_set(theme_bw())
+qplot(year, emissions, data = total.emissions.baltimore.LA.motor.vehicle, color = region, shape = region, geom = c("point", "line")) + theme(plot.title = element_text(size = 20)) + ggtitle(expression(atop(bold("Changes in emissions per year"), atop(italic("Baltimore City, Los Angeles County - Motor vehicle sources"), "")))) + labs(x = "Years", y = bquote("Changes in PM"[2.5] ~  "emissions per year (in tons)"))
 dev.off()

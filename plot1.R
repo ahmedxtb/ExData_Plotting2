@@ -13,7 +13,8 @@ colnames(total.emissions)[2] <- "emissions"
 ## Plot the total emissions (in mega-tons) vs. year from all sources for
 ## the USA (base plotting system)
 
-png(file ="plot1.png", width = 480, height = 480)
+png(file ="plot1.png", width = 720, height = 720)
+par(ps = 12, cex.main = 1.7)
 plot(total.emissions$year, total.emissions$emissions / 1000000, type = "b", col = "red", xlab = "Years", ylab = bquote("Sum of PM"[2.5] ~  "emissions per year (in mega-tons)"))
 title(bquote("Total emissions per year"), line = 3)
 title(expression(italic("USA - All sources")), line = 2)

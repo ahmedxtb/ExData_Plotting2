@@ -19,7 +19,8 @@ colnames(total.emissions.baltimore.motor.vehicle)[2] <- "emissions"
 ## Plot the total emissions (in tons) vs. year from motor vehicle sources
 ## for the Baltimore City (base plotting system)
 
-png(file ="plot5.png", width = 480, height = 480)
+png(file ="plot5.png", width = 720, height = 720)
+par(ps = 12, cex.main = 1.7)
 plot(total.emissions.baltimore.motor.vehicle$year, total.emissions.baltimore.motor.vehicle$emissions, type = "b", col = "red", xlab = "Years", ylab = bquote("Sum of PM"[2.5] ~  "emissions per year (in tons)"))
 title(bquote("Total emissions per year"), line = 3)
 title(expression(italic("Baltimore City - Motor vehicle sources")), line = 2)
