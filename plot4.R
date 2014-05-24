@@ -5,7 +5,7 @@ NEI <- readRDS("exdata-data-NEI_data/summarySCC_PM25.rds")
 SCC <- readRDS("exdata-data-NEI_data/Source_Classification_Code.rds")
 
 ## Extract from "NEI" data frame the values corresponding to the lines of
-## the "SCC" data frame containing the terms "coal" an "comb" in "EI.Sector" column
+## the "SCC" data frame containing the terms "coal" and "comb" in "EI.Sector" column
 
 SCC.coal <- SCC[grepl("coal", SCC$EI.Sector, ignore.case = TRUE), ]
 SCC.coal.comb <- SCC.coal[grepl("comb", SCC.coal$EI.Sector, ignore.case = TRUE), ]

@@ -12,6 +12,7 @@ NEI.baltimore.LA.motor.vehicle <- subset(NEI, type == "ON-ROAD" & (fips == "2451
 ## Load the ggplot2 package
 
 library(ggplot2)
+library(grid)
 
 ## Create a new data frame with the sum of emissions from motor vehicle
 ## sources per year with the aggregate() function on
@@ -34,5 +35,5 @@ total.emissions.baltimore.LA.motor.vehicle$region[total.emissions.baltimore.LA.m
 
 png(file ="plot6.png", width = 720, height = 720)
 theme_set(theme_bw())
-qplot(year, emissions, data = total.emissions.baltimore.LA.motor.vehicle, color = region, shape = region, geom = c("point", "line")) + theme(plot.title = element_text(size = 20)) + ggtitle(expression(atop(bold("Changes in emissions per year"), atop(italic("Baltimore City, Los Angeles County - Motor vehicle sources"), "")))) + labs(x = "Years", y = bquote("Changes in PM"[2.5] ~  "emissions per year (in tons)"))
+qplot(year, emissions, data = total.emissions.baltimore.LA.motor.vehicle, color = region, shape = region, geom = c("point", "line")) + theme(plot.title = element_text(size = 20)) + ggtitle(expression(atop(bold("Changes in emissions per year"), atop(italic("Baltimore City, Los Angeles County - Motor vehicle sources"), "")))) + labs(x = "Years", y = bquote("Changes (differences with 1999 values) in PM"[2.5] ~  "emissions per year (in tons)")) + geom_hline(yintercept = 0) + annotate("segment", x = 2008, xend = 2008, y = 0, yend = 170.201, arrow = arrow(ends = "both")) + annotate("segment", x = 2008, xend = 2008, y = 0, yend = -258.5445, arrow = arrow(ends = "both")) + annotate("text", x = 2005, y = 100, parse = TRUE, label = "Difference : 170.2", colour = "blue") + annotate("text", x = 2005, y = -125, parse = TRUE, label = "Difference : -258.5", colour = "red")
 dev.off()
