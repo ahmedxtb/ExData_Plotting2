@@ -9,7 +9,7 @@ SCC <- readRDS("exdata-data-NEI_data/Source_Classification_Code.rds")
 
 NEI.baltimore.LA.motor.vehicle <- subset(NEI, type == "ON-ROAD" & (fips == "24510" | fips == "06037"))
 
-## Load the ggplot2 package
+## Load the ggplot2 and grid packages
 
 library(ggplot2)
 library(grid)
